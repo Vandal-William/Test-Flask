@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="flex-database-content">
+        <nav class="database-navbar">
+            <h1 class="database-main-title">DATABASE MENU</h1>
+            <ul class="main-nav">
+                <li class="sub-title li-item">Clients</li> 
+                <ul class="sub-nav">
+                    <li class="li-item"><a class="link-item" href="{{ url_for('ticketing') }}">Billeterie</a></li>
+                    <li class="li-item"><a class="link-item" href="/database/events">Evènements</a></li>
+                    <li class="li-item"><a class="link-item"  href="/database/musicalGroups">Groupes Musicaux</a></li>
+                </ul>
+                
+                <li class="sub-title li-item">Programmateur</li>
+                <ul class="sub-nav">
+                    <li class="li-item"><a class="link-item"  href="/database/eventsDashboard">Dashboard évènements</a></li>
+                    <li class="li-item"><a class="link-item"  href="/database/contactMusician">Contact Musicien</a></li>
+        
+                </ul>
+        
+                <li class="sub-title li-item">Organisateur</li>
+                <ul class="sub-nav">
+                    <li class="li-item"><a class="link-item"  href="/database/addEvents">Créer un évènement</a></li>
+                    <li class="li-item"><a class="link-item"  href="/database/volunteers">Bénévoles</a></li>
+                    <li class="li-item"><a class="link-item"  href="/database/spectators">Spéctateurs</a></li>
+                    <li class="li-item"><a class="link-item"  href="/database/concertHalls">Salles de concert</a></li>
+                </ul> 
+                <li class="sub-title li-item">Musicien</li>
+                    <ul class="sub-nav">
+                        <li class="li-item"><a class="link-item"  href="/database/constraint">Contrainte technique</a></li>
+                    </ul> 
+        
+                <li class="sub-title li-item">Bénévole</li>
+                    <ul class="sub-nav">
+                        <li class="li-item"><a class="link-item"  href="/database/contactOrganizer">Contact Organisateur</a></li>
+                    </ul>  
+        
+                <li class="sub-title li-item">Staff</li>
+                    <ul class="sub-nav">
+                        <li class="li-item"><a class="link-item"  href="/database/todo-list">Liste des tâches</a></li>
+                    </ul>
+                
+                <li class="sub-title li-item">Agents</li>
+                    <ul class="sub-nav">
+                        <li class="li-item"><a class="link-item"  href="/database/validateParticipation">Valider une participation</a></li> 
+                    </ul>
+        
+                <li class="sub-title li-item">Régisseurs</li>
+                    <ul class="sub-nav">
+                        <li class="li-item"><a class="link-item"  href="/database/roomsAvailable">Les salles disponnibles</a></li> 
+                    </ul>
+        
+                <li class="sub-title li-item">Comptable</li>
+                    <ul class="sub-nav">
+                        <li class="li-item"><a class="link-item"  href="/database/dashboard">Dashboard</a></li>     
+                    </ul>
+
+                <li class="sub-title li-item final"><a class="link-item final-link"  href="/"> <span class="arrow"> < </span> Retourné à l'accueil</a></li>
+            </ul>
+
+        </nav>

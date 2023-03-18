@@ -1,0 +1,18 @@
+{% include "layout/databaseNav.html" %}
+            <main class="main-database">
+                <h1 class="main-database-title">Billeterie</h1>
+                <div class="main-database-cards">
+                    {% for ticket in tickets %}
+                    <div class="main-database-card">
+                        <h2>{{ ticket[1] }}</h2>
+                        <span>{{ ticket[2] }}€</span>
+                        <span>-{{ ticket[3] }}%</span>
+                        <span>{{ ticket[4] }}</span>
+                        <button>Acheter</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

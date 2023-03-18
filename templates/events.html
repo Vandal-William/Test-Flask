@@ -1,0 +1,21 @@
+{% include "layout/databaseNav.html" %}
+            <main class="main-database">
+                <h1 class="main-database-title">Evènements</h1>
+                <div class="main-database-cards">
+                    {% for event in events %}
+                    <div class="main-database-card">
+                        <h2>{{ event[1] }}</h2>
+                        <span>{{ event[2] }}</span>
+                        <span>{{ event[3] }}</span>
+                        <span>{{ event[4] }}</span>
+                        <span>{{ event[5] }}</span>
+                        <span>{{ event[6] }}</span>
+                        <span>{{ event[7] }}</span>
+                        <button>Voir l'évènement</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
