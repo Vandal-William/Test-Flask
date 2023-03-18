@@ -31,11 +31,12 @@ def event():
 @app.route("/database/events/<id>")
 def eventDetails(id):
     cursor = mysql.connection.cursor()
-    cursor.execute('select * from place;')
-    events = cursor.fetchall()
+    cursor.execute('select * from place WHERE id ='+ id +';')
+    oneEvents = cursor.fetchall()
+    print(oneEvents)
     mysql.connection.commit()
     cursor.close()
-    return render_template('events.html', events=events)
+    return render_template('./onePages/onePageEvent.html', oneEvents=oneEvents)
     
 @app.route("/database/eventsDashboard")
 def eventsDashboard():

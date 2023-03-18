@@ -191,7 +191,11 @@
 
 /* EVENTS PAGE */
 
-
+.main-database-card-event{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
 .event-title{
     font-size: 35px;
     margin: 20px 0 0 0 ;
