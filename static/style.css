@@ -188,3 +188,41 @@
     margin: 2%;
     
 }
+
+/* EVENTS PAGE */
+
+
+.event-title{
+    font-size: 35px;
+    margin: 20px 0 0 0 ;
+    font-weight: 100;
+    text-align: center;
+}
+
+
+.event-style{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 10px;
+    gap: 5%;
+}
+
+.event-place-url{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5%;
+}
+
+.event-img{
+    width: 10%;
+}
+
+.link-event{
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    background-color: #e84855;
+    color: #ffffff;
+}
