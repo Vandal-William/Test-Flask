@@ -7,10 +7,10 @@
                 -->
 
                 <p class="main-database-request"><span class="groupes">Groupe: 1</span> Lister les 5 prochains concerts</p>
-                <p class="main-database-response">requete</p>
+                <p class="main-database-response">SELECT * FROM event WHERE discr = 'concert' ORDER BY start_time ASC LIMIT 5;</p>
                 
                 <p class="main-database-request"><span class="groupes">Groupe: 2</span> Lister les concerts (id et date) par ordre chronologique</p>
-                <p class="main-database-response">requete</p> 
+                <p class="main-database-response">SELECT * FROM event WHERE discr = 'concert' ORDER BY date ASC;</p> 
 
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister qui est en première et seconde partie de chaque concert (et indiquer s’il n’y a personne)</p>
                 <p class="main-database-response">requete</p>
