@@ -13,13 +13,13 @@
                 <p class="main-database-response">SELECT * FROM event WHERE discr = 'concert' ORDER BY date ASC;</p> 
 
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister qui est en première et seconde partie de chaque concert (et indiquer s’il n’y a personne)</p>
-                <p class="main-database-response">requete</p>
+                <p class="main-database-response">SELECT place.name, artist.first_name, artist.last_name, concert_part.gig FROM concert_part JOIN artist ON concert_part.artist_id = artist.id JOIN concert ON concert_part.concert_id = concert.id JOIN event ON concert.id = event.id JOIN place ON event.place_id = place.id WHERE concert_part.status = 'signed' OR concert_part.status = 'cancelled';</p>
                 
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister les groupes et les salles où ils se produisent</p>
                 <p class="main-database-response">requete</p> 
 
                 <p class="main-database-request"><span class="groupes">Groupe: 4</span> Lister les concerts qui ont rassemblé plus de 100 spectateurs</p>
-                <p class="main-database-response">request</p> 
+                <p class="main-database-response">SELECT place.name, ticket.concert_id, COUNT(spectator_id) FROM ticket JOIN concert ON ticket.concert_id = concert.id JOIN event ON concert.id = event.id JOIN place ON event.place_id = place.id GROUP BY ticket.concert_id HAVING COUNT(spectator_id) > 100;</p> 
 
                 <p class="main-database-request"><span class="groupes">Groupe: 6 </span>Afficher les groupes qui passent en seconde partie de concert</p>
                 <p class="main-database-response">request</p>
