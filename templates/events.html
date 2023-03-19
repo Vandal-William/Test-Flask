@@ -1,17 +1,17 @@
 {% include "layout/databaseNav.html" %}
             <main class="main-database">
                 <h1 class="main-database-title">Evènements</h1>
-                <div class="main-database-cards">
-                    {% for event in events %}
-                    <div class="main-database-card-event">
-                        <h2 class="event-title">{{ event[1] }}</h2>
-                        <div class="event-place-url">
-                            <span class="event-style"><img class="event-img" src="../static/icons/musique.png" alt="icon-type music">{{ event[2] }}</span>
-                            <a href="/database/events/{{event[0]}}" class="link-event">Voir l'évènement</a>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
+                 <!-- 
+                <p class="main-database-request"></p>
+                <p class="main-database-response"></p> 
+                -->
+                <!-- 
+                {% for event in events %}
+                    {{ event[1] }}
+                {% endfor %} 
+                -->
+                <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister les concerts auxquels va assister Retha Dookie, avec la liste des membres du groupe, le lieu et la date/heure</p>
+                <p class="main-database-response">requete</p>
             </main>
         </div>
     </body>

@@ -20,23 +20,13 @@ def database():
     return render_template('database.html')
     
 @app.route("/database/events")
-def event():
+def events():
     cursor = mysql.connection.cursor()
     cursor.execute('select * from place;')
     events = cursor.fetchall()
     mysql.connection.commit()
     cursor.close()
     return render_template('events.html', events=events)
-
-@app.route("/database/events/<id>")
-def eventDetails(id):
-    cursor = mysql.connection.cursor()
-    cursor.execute('select * from place WHERE id ='+ id +';')
-    oneEvents = cursor.fetchall()
-    print(oneEvents)
-    mysql.connection.commit()
-    cursor.close()
-    return render_template('./onePages/onePageEvent.html', oneEvents=oneEvents)
     
 @app.route("/database/eventsDashboard")
 def eventsDashboard():
@@ -46,37 +36,17 @@ def eventsDashboard():
 def contactMusician():
     return render_template('contactMusician.html')
 
-@app.route("/database/addEvents")
-def addEvents():
-    return render_template('addEvents.html')
-
-@app.route("/database/volunteers")
-def volunteers():
-    return render_template('volunteers.html')
+@app.route("/database/dashboardOrga")
+def dashboardOrga():
+    return render_template('dashboardOrga.html')
 
 @app.route("/database/spectators")
 def spectators():
     return render_template('spectators.html')
 
-@app.route("/database/concertHalls")
-def concertHalls():
-    return render_template('concertHalls.html') 
-
 @app.route("/database/constraint")
 def constraint():
     return render_template('constraint.html')
-
-@app.route("/database/contactOrganizer")
-def contactOrganizer():
-    return render_template('contactOrganizer.html')
-
-@app.route("/database/todo-list")
-def todoList():
-    return render_template('todo-list.html')
-
-@app.route("/database/validateParticipation")
-def validateParticipation():
-    return render_template('validateParticipation.html')
 
 @app.route("/database/roomsAvailable")
 def roomsAvailable():
