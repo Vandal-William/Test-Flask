@@ -11,7 +11,7 @@
                 {% endfor %} 
                 -->
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister les concerts auxquels va assister Retha Dookie, avec la liste des membres du groupe, le lieu et la date/heure</p>
-                <p class="main-database-response">requete</p>
+                <p class="main-database-response">SELECT spectateur.first_name, spectateur.last_name, event.start_time, event.discr, place.name FROM spectateur JOIN ticket ON spectateur.id = ticket.spectator_id JOIN concert ON ticket.concert_id = concert.id JOIN event ON concert.id = event.id JOIN place ON event.place_id = place.id WHERE spectateur.first_name = 'Retha'; </p>
             </main>
         </div>
     </body>
