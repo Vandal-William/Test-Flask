@@ -6,37 +6,43 @@
                 <p class="main-database-response"></p> 
                 -->
 
-                <p class="main-database-request"><span class="groupes">Groupe: 3</span> Calculer le panier moyen des ventes</p>
-                <p class="main-database-response">SELECT ticket.price_id, COUNT(ticket.price_id) AS nombre_tickets, price.price, price.price * COUNT(ticket.price_id) AS prix_total,
-                    SUM(price.price * COUNT(ticket.price_id)) OVER () AS chiffre_affaire, ( SELECT COUNT(*) FROM spectateur ) AS max_spectateur ,
-                    (SUM(price.price * COUNT(ticket.price_id)) OVER () / ( SELECT COUNT(*) FROM spectateur ) ) AS panier_moyen
+                <p class="main-database-request"><span class="groupes">Groupe: 3</span> <br>Calculer le panier moyen des ventes</p>
+                <p class="main-database-response"><br>SELECT ticket.price_id, COUNT(ticket.price_id) AS nombre_tickets, price.price, price.price * COUNT(ticket.price_id) AS prix_total,
+                    SUM(price.price * COUNT(ticket.price_id)) <br>OVER () AS chiffre_affaire, ( SELECT COUNT(*) <br>FROM spectateur ) AS max_spectateur ,
+                    (SUM(price.price * COUNT(ticket.price_id)) <br>OVER () / ( SELECT COUNT(*) <br>FROM spectateur ) ) AS panier_moyen
                     
-                FROM ticket 
-                LEFT JOIN price ON ticket.price_id = price.id 
-                GROUP BY ticket.price_id, price.price;
+                <br>FROM ticket 
+                <br>LEFT JOIN price ON ticket.price_id = price.id 
+                <br>GROUP BY ticket.price_id, price.price;
                 </p> 
 
-                <p class="main-database-request"> <span class="groupes">Groupe: 4</span> Lister les concerts en indiquant le nombre de places vendues.</p>
-                <p class="main-database-response">SELECT ticket.concert_id, COUNT(ticket.concert_id) AS places_vendues
-                    FROM ticket 
-                    LEFT JOIN concert ON ticket.concert_id = concert.id 
-                    GROUP BY ticket.concert_id, concert.id ;
+                <p class="main-database-request"> <span class="groupes"><br>Groupe: 4</span> <br>Lister les concerts en indiquant le nombre de places vendues.</p>
+                <p class="main-database-response"><br>SELECT ticket.concert_id, COUNT(ticket.concert_id) AS places_vendues
+                    <br>FROM ticket 
+                    <br>LEFT JOIN concert ON ticket.concert_id = concert.id 
+                    <br>GROUP BY ticket.concert_id, concert.id ;
                     </p> 
 
-                <p class="main-database-request"><span class="groupes">Groupe: 4</span> Lister le total des ventes pour chaque journée de festival (en se basant sur startTime)</p>
-                <p class="main-database-response">SELECT DATE(event.start_time) AS date, SUM(price.price) AS total_journalier
-                    FROM ticket 
-                    LEFT JOIN price ON ticket.price_id = price.id 
-                    LEFT JOIN concert ON ticket.concert_id = concert.id
-                    LEFT JOIN event ON concert.id = event.id
-                    GROUP BY DATE(event.start_time)
-                    ORDER BY DATE(event.start_time);</p>
+                <p class="main-database-request"><span class="groupes"><br>Groupe: 4</span><br> Lister le total des ventes pour chaque journée de festival (en se basant sur startTime)</p>
+                <p class="main-database-response"><br>SELECT DATE(event.start_time) AS date, SUM(price.price) AS total_journalier
+                    <br>FROM ticket 
+                    <br>LEFT JOIN price ON ticket.price_id = price.id 
+                    <br>LEFT JOIN concert ON ticket.concert_id = concert.id
+                    <br>LEFT JOIN event ON concert.id = event.id
+                    <br>GROUP BY DATE(event.start_time)
+                    <br>ORDER BY DATE(event.start_time);</p>
                 
-                <p class="main-database-request"><span class="groupes">Groupe: 4</span> Lister la moyenne du montant des ventes pour chaque concert</p>
-                <p class="main-database-response">request</p>
+                <p class="main-database-request"><span class="groupes"><br>Groupe: 4</span><br> Lister la moyenne du montant des ventes pour chaque concert</p>
+                <p class="main-database-response"><br>SELECT ticket.concert_id, SUM(price.price) AS total_concert
+                    <br>FROM ticket 
+                    <br>LEFT JOIN price ON ticket.price_id = price.id 
+                    <br>LEFT JOIN concert ON ticket.concert_id = concert.id
+                    <br>LEFT JOIN event ON concert.id = event.id
+                    <br>GROUP BY ticket.concert_id;
+                    </p>
 
-                <p class="main-database-request"><span class="groupes">Groupe: 6</span> Lister les gens qui ont dépensé plus que la moyenne du panier d’achat</p>
-                <p class="main-database-response">resquest</p> 
+                <p class="main-database-request"><span class="groupes"><br>Groupe: 6</span> <br>Lister les gens qui ont dépensé plus que la moyenne du panier d’achat</p>
+                <p class="main-database-response"><br>resquest</p> 
 
             </main>
         </div>
