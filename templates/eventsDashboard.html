@@ -7,22 +7,22 @@
                 -->
 
                 <p class="main-database-request"><span class="groupes">Groupe: 1</span> Lister les 5 prochains concerts</p>
-                <p class="main-database-response">SELECT * FROM event WHERE discr = 'concert' ORDER BY start_time ASC LIMIT 5;</p>
+                <p class="main-database-response">SELECT * <br/>FROM event <br/>WHERE discr = 'concert' <br/>ORDER BY start_time <br/>ASC LIMIT 5;</p>
                 
                 <p class="main-database-request"><span class="groupes">Groupe: 2</span> Lister les concerts (id et date) par ordre chronologique</p>
-                <p class="main-database-response">SELECT * FROM event WHERE discr = 'concert' ORDER BY date ASC;</p> 
+                <p class="main-database-response">SELECT * <br/>FROM event <br/>WHERE discr = 'concert' <br/>ORDER BY date ASC;</p> 
 
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister qui est en première et seconde partie de chaque concert (et indiquer s’il n’y a personne)</p>
-                <p class="main-database-response">SELECT place.name, artist.first_name, artist.last_name, concert_part.gig FROM concert_part JOIN artist ON concert_part.artist_id = artist.id JOIN concert ON concert_part.concert_id = concert.id JOIN event ON concert.id = event.id JOIN place ON event.place_id = place.id WHERE concert_part.status = 'signed' OR concert_part.status = 'cancelled';</p>
+                <p class="main-database-response">SELECT place.name, artist.first_name, artist.last_name, concert_part.gig <br/>FROM concert_part <br/>JOIN artist ON concert_part.artist_id = artist.id <br/>JOIN concert ON concert_part.concert_id = concert.id <br/>JOIN event ON concert.id = event.id <br/>JOIN place ON event.place_id = place.id <br/>WHERE concert_part.status = 'signed' <br/>OR concert_part.status = 'cancelled';</p>
                 
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister les groupes et les salles où ils se produisent</p>
-                <p class="main-database-response">requete</p> 
+                <p class="main-database-response">SELECT place.name, group.name <br/>FROM concert_part <br/>JOIN artist ON concert_part.artist_id = artist.id <br/>JOIN artist_group ON artist.id = artist_group.artist_id <br/>JOIN `group` ON artist_group.group_id = group.id <br/>JOIN concert ON concert_part.concert_id = concert.id <br/>JOIN event ON concert.id = event.id <br/>JOIN place ON event.place_id = place.id;</p> 
 
                 <p class="main-database-request"><span class="groupes">Groupe: 4</span> Lister les concerts qui ont rassemblé plus de 100 spectateurs</p>
-                <p class="main-database-response">SELECT place.name, ticket.concert_id, COUNT(spectator_id) FROM ticket JOIN concert ON ticket.concert_id = concert.id JOIN event ON concert.id = event.id JOIN place ON event.place_id = place.id GROUP BY ticket.concert_id HAVING COUNT(spectator_id) > 100;</p> 
+                <p class="main-database-response">SELECT place.name, ticket.concert_id, COUNT(spectator_id) <br/>FROM ticket <br/>JOIN concert ON ticket.concert_id = concert.id <br/>JOIN event ON concert.id = event.id <br/>JOIN place ON event.place_id = place.id <br/>GROUP BY ticket.concert_id <br/>HAVING COUNT(spectator_id) > 100;</p> 
 
                 <p class="main-database-request"><span class="groupes">Groupe: 6 </span>Afficher les groupes qui passent en seconde partie de concert</p>
-                <p class="main-database-response">request</p>
+                <p class="main-database-response">Impossible</p>
                 
             </main>
         </body>
