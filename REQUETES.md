@@ -275,7 +275,7 @@ nombres de résultats : 5
 ## Groupe 5 : Requêtes ensemblistes (3/20)
 
 1. Lister les nom, prénom de ceux qui font le festival : Artistes et Bénévoles.
-Pour les téméraires : reprenez la requête précédente et ajouter une colonne indiquant le rôle (artiste ou bénévole) de chacun.
+2. Pour les téméraires : reprenez la requête précédente et ajouter une colonne indiquant le rôle (artiste ou bénévole) de chacun.
 
 ```sql
 SELECT a.first_name AS name, a.last_name, r.role_name FROM artist a
