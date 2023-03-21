@@ -48,7 +48,18 @@ sudo apt install mysql-server
 ```
 
 1. créer un utilisateur flask
+
+```shell
+CREATE DATABASE nom_de_la_base
+```
+
 2. créer une bdd et la nommer flask
+
+```shell
+CREATE USER 'new_user' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON database.* TO 'user';
+```
+
 3. Importer la bdd
 
 ```shell

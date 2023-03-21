@@ -6,13 +6,13 @@
                 <p class="main-database-response"></p> 
                 -->
                 <p class="main-database-request"><span class="groupes">Groupe: 1</span> Lister le nom et le prénom des musiciens, ordonnées par leur date de naissance</p>
-                <p class="main-database-response">requete</p> 
+                <p class="main-database-response">SELECT first_name, last_name <br>FROM artist <br>ORDER BY birthdate;</p> 
                 
                 <p class="main-database-request"><span class="groupes">Groupe: 2</span> Lister les musiciens nés entre 1970 et 1990</p>
-                <p class="main-database-response">requete</p>
+                <p class="main-database-response">SELECT last_name, first_name, birthdate <br>FROM artist <br>WHERE birthdate <br>BETWEEN '1970-01-01' AND '1990-12-31';</p>
 
                 <p class="main-database-request"><span class="groupes">Groupe: 4</span> Lister les groupes et leur nombre de membres.</p>
-                <p class="main-database-response">requete</p> 
+                <p class="main-database-response">SELECT g.name AS groupe, COUNT(ag.artist_id) AS nombre_membres <br>FROM `group` AS g <br>INNER JOIN artist_group AS ag ON g.id = ag.group_id <br>GROUP BY g.id;</p> 
                 
             </main>
         </div>

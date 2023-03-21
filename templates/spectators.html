@@ -7,10 +7,16 @@
                 -->
 
                 <p class="main-database-request"><span class="groupes">Groupe: 2</span> Lister les spectateurs originaires de Croatie</p>
-                <p class="main-database-response">requete</p>
+                <p class="main-database-response">SELECT *
+                    <br>FROM spectateur
+                    <br>WHERE country = 'Croatia';
+                    </p>
 
                 <p class="main-database-request"><span class="groupes">Groupe: 2</span> Lister les spectateurs dont le nom commence par B et nés avant 1970</p>
-                <p class="main-database-response">requete</p> 
+                <p class="main-database-response">SELECT *
+                    <br>FROM spectateur
+                    <br>WHERE last_name LIKE 'B%' <br>AND birthdate < '1970-01-01';
+                    </p> 
                 
             </main>
         </div>
