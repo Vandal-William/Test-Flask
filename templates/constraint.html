@@ -7,16 +7,16 @@
                 -->
                 
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister les instruments de chaque groupe</p>
-                <p class="main-database-response">SELECT g.name, GROUP_CONCAT(DISTINCT a.instrument ORDER BY a.instrument SEPARATOR ', ') AS instruments
-                    FROM `group` g
-                    LEFT JOIN artist a ON g.id = a.id
-                    GROUP BY g.id</p>
+                <p class="main-database-response">SELECT g.name, GROUP_CONCAT(DISTINCT a.instrument <br>ORDER BY a.instrument SEPARATOR ', ') AS instruments
+                    <br>FROM `group` g
+                    <br>LEFT JOIN artist a ON g.id = a.id
+                    <br>GROUP BY g.id</p>
 
                 <p class="main-database-request"><span class="groupes">Groupe: 3</span> Lister les salles/lieux et les contraintes techniques de chacune.</p>
                 <p class="main-database-response">SELECT p.name, tc.equipment, tc.description
-                    FROM place p
-                    LEFT JOIN technical_constraints_place tcp ON p.id = tcp.place_id
-                    LEFT JOIN technical_constraints tc ON tcp.technical_constraints_id = tc.id;
+                    <br>FROM place p
+                    <br>LEFT JOIN technical_constraints_place tcp ON p.id = tcp.place_id
+                    <br>LEFT JOIN technical_constraints tc ON tcp.technical_constraints_id = tc.id;
                     </p>
             </main>
         </div>
