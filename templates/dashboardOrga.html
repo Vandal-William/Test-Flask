@@ -9,11 +9,11 @@
                 <p class="main-database-request"><span class="groupes">Groupe: 5</span> Lister les nom, prénom de ceux qui font le festival : Artistes et Bénévoles. avec leurs rôle</p>
                 <p class="main-database-response">SELECT a.first_name AS name, a.last_name, r.role_name
                     FROM artist a
-                    JOIN role r ON a.id = r.person_id
-                    UNION ALL
+                    <br>JOIN role r ON a.id = r.person_id
+                    <br>UNION ALL
                     SELECT s.first_name AS name, s.last_name, r.role_name
                     FROM staff s
-                    JOIN role r ON s.id = r.person_id;
+                    <br>JOIN role r ON s.id = r.person_id;
                     </p>
             </main>
         </div>

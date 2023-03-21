@@ -1,15 +1,9 @@
 from flask import Flask
 from flask import render_template
-from flask_mysqldb import MySQL
+
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'flask'
-app.config['MYSQL_PASSWORD'] = 'flask'
-app.config['MYSQL_DB'] = 'flask'
- 
-mysql = MySQL(app)
 
 @app.route('/')
 def index():
@@ -21,11 +15,6 @@ def database():
     
 @app.route("/database/events")
 def events():
-    cursor = mysql.connection.cursor()
-    cursor.execute('select * from place;')
-    events = cursor.fetchall()
-    mysql.connection.commit()
-    cursor.close()
     return render_template('events.html', events=events)
     
 @app.route("/database/eventsDashboard")
