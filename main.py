@@ -15,7 +15,7 @@ def database():
     
 @app.route("/database/events")
 def events():
-    return render_template('events.html', events=events)
+    return render_template('events.html')
     
 @app.route("/database/eventsDashboard")
 def eventsDashboard():
